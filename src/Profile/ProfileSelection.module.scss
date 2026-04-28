@@ -1,0 +1,143 @@
+$bg-dark: #141414;
+$text-grey: #808080;
+$transition-speed: 0.3s;
+
+.netflix-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-dark;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  .background-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url('/img/Hero.png'); 
+    background-size: cover;
+    opacity: 0.15;
+    // filter: grayscale(100%);
+    pointer-events: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 90%; // Ensure content doesn't hit screen edges
+    max-width: 1200px;
+
+    h1 {
+      color: white;
+      font-size: clamp(1.5rem, 5vw, 3.5rem); // Responsive title
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.profile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  // This controls the overall responsive size of each profile slot
+  width: clamp(100px, 15vw, 160px); 
+// This ensures the animation looks clean
+  will-change: transform, opacity;
+  .icon-box {
+    width: 100%;       // Takes width from profile-card
+    aspect-ratio: 1;    // Keeps it perfectly square
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all $transition-speed ease;
+    border: 4px solid transparent;
+    overflow: hidden; // Keeps image inside borders
+    box-sizing: border-box;
+
+    .ProfileImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Fills the square like Netflix profiles
+      transition: transform $transition-speed ease;
+    }
+  }
+
+  .profile-label {
+    margin-top: 0.8rem;
+    color: $text-grey;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    transition: color $transition-speed;
+  }
+
+  &:hover {
+    .icon-box {
+      border-color: white; // Added white border back for classic look
+      transform: scale(1.05);
+      
+      .ProfileImg {
+        transform: scale(1.05); // Slight zoom on image inside
+      }
+    }
+    .profile-label {
+      color: white;
+    }
+  }
+
+  &.add-profile {
+    .icon-box {
+      background-color: transparent;
+      border: none; // Add profile usually doesn't have the border until hover
+
+      .plus-icon {
+        color: $text-grey;
+        font-size: 4rem;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    &:hover {
+      .icon-box {
+        background-color: #e5e5e5;
+        border-color: #e5e5e5;
+        transform: scale(1.05);
+        
+        .plus-icon {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.manage-button {
+  margin-top: 4rem;
+  background: transparent;
+  color: $text-grey;
+  border: 1px solid $text-grey;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all $transition-speed;
+
+  &:hover {
+    color: white;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
