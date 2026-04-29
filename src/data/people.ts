@@ -220,14 +220,14 @@ export const verticals: VerticalData[] = [
         description: "Keep your face always toward the sunshine - and shadows will fall behind you.",
         traits: ['Focused', 'Logical', 'Efficient']
       },
-      {
-        name: 'MALAY DWIVEDI',
-        img: '/people/malay dwivedi.jpg',
-        position: 'iOS Developer',
-        type: 'other',
-        description: "Life is a journey, not a destination.",
-        traits: ['Precise', 'Dedicated', 'Artistic']
-      },
+      // {
+      //   name: 'MALAY DWIVEDI',
+      //   img: '/people/malay dwivedi.jpg',
+      //   position: 'iOS Developer',
+      //   type: 'other',
+      //   description: "Life is a journey, not a destination.",
+      //   traits: ['Precise', 'Dedicated', 'Artistic']
+      // },
       {
         name: 'PUSHKAR MISHRA',
         img: '/people/pushkar mishra.jpg',
