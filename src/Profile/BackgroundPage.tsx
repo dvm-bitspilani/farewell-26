@@ -6,7 +6,7 @@ interface BackgroundPageProps {
   vertical: VerticalData;
 }
 
-const BackgroundPage: React.FC<BackgroundPageProps> = ({ vertical }) => {
+const BackgroundPage: React.FC<BackgroundPageProps> = () => {
   return (
     <div className={styles.bgWrapper}>
       <img src="/img/backgroundTop.png" className={styles.fullTopBg} alt="" />

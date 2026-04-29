@@ -4,7 +4,7 @@ import ProfileSelection from './Profile/ProfileSelection'
 import ProfileDetails from './Profile/ProfileDetails'
 import Navbar from './components/Navbar'
 import BackgroundPage from './Profile/BackgroundPage'
-import { type VerticalData, verticals } from './data/people'
+import { verticals } from './data/people'
 
 function App() {
   const [selectedVerticalId, setSelectedVerticalId] = useState<number | null>(null);
