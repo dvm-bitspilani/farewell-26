@@ -67,7 +67,7 @@ export const verticals: VerticalData[] = [
     seasons: '3 Seasons',
     people: [
       { 
-        name: 'SIDDHARTH M', 
+        name: 'LUV GUPTA', 
         img: '/img/tarun.png', 
         position: 'Senior Frontend Engineer', 
         type: 'other',
