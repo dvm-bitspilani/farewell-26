@@ -410,8 +410,9 @@
   }
 
   .rightActions {
-    bottom: 15px;
-    gap: 10px;
+    bottom: 15px !important;
+    right: 15px;
+    gap: 8px;
     .iconBtn {
       width: 34px;
       height: 34px;
@@ -419,10 +420,13 @@
     }
     .maturityRating {
       height: 34px;
-      min-width: 60px;
+      min-width: 50px;
       padding: 0 20px 0 10px;
       font-size: 0.9rem;
-      border-left-width: 2px;
+      border-left: 2px solid #ffffff;
+      display: flex;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.4);
     }
   }
   .contentLayout {
