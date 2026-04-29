@@ -207,7 +207,7 @@ export const verticals: VerticalData[] = [
     genre: 'Mobile Applications',
     genres: ['Oasis App', 'Apogee App', 'Vendor App', 'Admin App', 'Game Dev'],
     color: '#61dafb',
-    cast: ['Arnav Bharti', 'Malay Dwivedi', 'Pushkar Mishra', 'Tejansh Gautam', 'Chayan Jain'],
+    cast: ['Arnav Bharti', 'Pushkar Mishra', 'Tejansh Gautam', 'Chayan Jain'],
     year: '2024',
     seasons: '1 Season',
     icon: '/svg/react-icon.svg',
@@ -220,14 +220,14 @@ export const verticals: VerticalData[] = [
         description: 'Developing high-performance mobile applications that provide a seamless user experience.',
         traits: ['Focused', 'Logical', 'Efficient']
       },
-      {
-        name: 'MALAY DWIVEDI',
-        img: '/people/malay dwivedi.jpg',
-        position: 'iOS Developer',
-        type: 'other',
-        description: 'Crafting premium iOS experiences with a focus on native performance and design.',
-        traits: ['Precise', 'Dedicated', 'Artistic']
-      },
+      // {
+      //   name: 'MALAY DWIVEDI',
+      //   img: '/people/malay dwivedi.jpg',
+      //   position: 'iOS Developer',
+      //   type: 'other',
+      //   description: 'Crafting premium iOS experiences with a focus on native performance and design.',
+      //   traits: ['Precise', 'Dedicated', 'Artistic']
+      // },
       {
         name: 'PUSHKAR MISHRA',
         img: '/people/pushkar mishra.jpg',
