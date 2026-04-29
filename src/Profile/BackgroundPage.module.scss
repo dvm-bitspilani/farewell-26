@@ -23,48 +23,10 @@
   z-index: 1;
 }
 
-.header {
-  height: 70px;
-  padding: 0 4%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #0a0a0a;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  position: relative;
-  z-index: 10;
 
-  .logo {
-    color: #e50914;
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-  }
-
-  .categoryDropdown {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(0,0,0,0.7);
-    padding: 5px 15px;
-    border-radius: 4px;
-    border: 1px solid rgba(255,255,255,0.2);
-    cursor: pointer;
-
-    img {
-      width: 20px;
-      height: 20px;
-    }
-    
-    span {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-  }
-}
 
 .mainContent {
-  padding: 180px 4% 0; // Increased from 100px to lower content
+  padding: 250px 4% 0; // Lowered further to show more background
   position: relative;
   z-index: 5;
 }

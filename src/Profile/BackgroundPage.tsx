@@ -1,22 +1,16 @@
 import React from 'react';
 import styles from './BackgroundPage.module.scss';
+import type { VerticalData } from '../data/people';
 
-const BackgroundPage: React.FC = () => {
+interface BackgroundPageProps {
+  vertical: VerticalData;
+}
+
+const BackgroundPage: React.FC<BackgroundPageProps> = ({ vertical }) => {
   return (
     <div className={styles.bgWrapper}>
       <img src="/img/backgroundTop.png" className={styles.fullTopBg} alt="" />
       
-      <header className={styles.header}>
-        <div className={styles.logo}>DVM</div>
-        <div className={styles.navRight}>
-          <div className={styles.categoryDropdown}>
-            <img src="/svg/ae-icon.svg" alt="Category" />
-            <span>Video</span>
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M7 10l5 5 5-5z"/></svg>
-          </div>
-        </div>
-      </header>
-
       <main className={styles.mainContent}>
         <div className={styles.heroSection}>
           <h1 className={styles.heroTitle}>DVM: Original</h1>
@@ -45,8 +39,14 @@ const BackgroundPage: React.FC = () => {
           </div>
 
           <div className={styles.rightSide}>
-            <div className={styles.thumb}><img src="/img/bgTb3.jpg" alt="Apogee 22" /></div>
-            <div className={styles.thumb}><img src="/img/bgTb5.png" alt="Apogee 23" /></div>
+            <section className={styles.section}>
+              <h3>Recently Released</h3>
+              <div className={styles.thumb}><img src="/img/bgTb3.jpg" alt="Apogee 22" /></div>
+            </section>
+            <section className={styles.section}>
+              <h3>Trending Now</h3>
+              <div className={styles.thumb}><img src="/img/bgTb5.png" alt="Apogee 23" /></div>
+            </section>
           </div>
         </div>
       </main>

@@ -13,8 +13,10 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * vertical.people.length);
-    setSelectedPerson(vertical.people[randomIndex]);
+    if (!selectedPerson) {
+      const randomIndex = Math.floor(Math.random() * vertical.people.length);
+      setSelectedPerson(vertical.people[randomIndex]);
+    }
   }, [vertical]);
 
   useLayoutEffect(() => {
@@ -32,16 +34,50 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
 
   if (!selectedPerson) return null;
 
+  const currentIndex = vertical.people.findIndex(p => p.name === selectedPerson.name);
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const prevIndex = (currentIndex - 1 + vertical.people.length) % vertical.people.length;
+    setSelectedPerson(vertical.people[prevIndex]);
+    if (containerRef.current) containerRef.current.scrollTop = 0;
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const nextIndex = (currentIndex + 1) % vertical.people.length;
+    setSelectedPerson(vertical.people[nextIndex]);
+    if (containerRef.current) containerRef.current.scrollTop = 0;
+  };
+
   return (
     <div className={styles.modalOverlay} onClick={onBack}>
       <div className={styles.pageWrapper} ref={containerRef} style={{ '--accent-color': vertical.color } as React.CSSProperties} onClick={(e) => e.stopPropagation()}>
+      
       {/* Hero Section */}
       <section className={styles.heroSection}>
+        <div className={styles.mobileHeader}>
+          <button className={styles.backArrowBtn} onClick={onBack}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="24" height="24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div className={styles.mobileLogo}>DVM</div>
+          <div className={styles.mobileVerticalIcon}>
+            <img src={vertical.icon} alt={vertical.label} />
+          </div>
+        </div>
+
         <div className={styles.heroOverlay} />
         <img src={selectedPerson.img} alt={selectedPerson.name} className={styles.heroBg} />
         
         <button className={styles.backButton} onClick={onBack}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="white"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+
+        <button className={`${styles.navArrow} ${styles.prevArrow}`} onClick={handlePrev}>
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button className={`${styles.navArrow} ${styles.nextArrow}`} onClick={handleNext}>
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="white"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
         </button>
 
         <div className={styles.heroContent}>
@@ -63,14 +99,14 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
             <button className={styles.iconBtn}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
             </button>
-            
-            <div className={styles.rightActions}>
-              <button className={styles.iconBtn}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-              </button>
-              <div className={styles.maturityRating}>A</div>
-            </div>
           </div>
+        </div>
+
+        <div className={styles.rightActions}>
+          <button className={styles.iconBtn}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M11 5L6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </button>
+          <div className={styles.maturityRating}>A</div>
         </div>
       </section>
 
@@ -91,28 +127,10 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
 
           <div className={styles.top10}>
             <div className={styles.top10Badge}>TOP 10</div>
-            <span>#1 CostAAn 24-25</span>
+            <span>{vertical.label}</span>
           </div>
 
           <p className={styles.description}>{selectedPerson.description}</p>
-
-          <section className={styles.moreLikeThis}>
-            <h2>More Like This</h2>
-            <div className={styles.cardsGrid}>
-              {[1, 2, 3].map((i) => (
-                <div key={i} className={styles.card} onClick={() => {
-                  const nextPerson = vertical.people[i % vertical.people.length];
-                  setSelectedPerson(nextPerson);
-                }}>
-                  <div className={styles.cardBadge}>D</div>
-                  <img src={`/img/youWillAlsoLike${i === 1 ? '' : i === 2 ? '1' : '3'}.png`} alt="Recommendation" />
-                  <div className={styles.cardOverlay}>
-                    <span>{vertical.people[i % vertical.people.length].name}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
         </div>
 
         <aside className={styles.sidebar}>
@@ -130,6 +148,24 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
           </div>
         </aside>
       </div>
+
+      <section className={styles.moreLikeThis}>
+        <h2>More Like This</h2>
+        <div className={styles.cardsGrid}>
+          {vertical.people.map((person, index) => (
+            <div key={index} className={styles.card} onClick={() => {
+              setSelectedPerson(person);
+              if (containerRef.current) containerRef.current.scrollTop = 0;
+            }}>
+              <div className={styles.cardBadge}>D</div>
+              <img src={person.img} alt={person.name} />
+              <div className={styles.cardOverlay}>
+                <span>{person.name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   </div>
   );

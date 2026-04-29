@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  z-index: 100;
+  z-index: 300; 
   overflow-y: auto;
   padding: 80px 0;
 }
@@ -28,24 +28,21 @@
 }
 
 @keyframes modalEnter {
-  from {
-    transform: scale(0.9);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .heroSection {
   position: relative;
   width: 100%;
-  height: 600px; // Increased from 500px to make model image more prominent
+  height: 600px; // Increased height as requested
   display: flex;
   align-items: flex-end;
   padding: 0 40px 40px;
+
+  .mobileHeader {
+    display: none;
+  }
 
   .heroBg {
     position: absolute;
@@ -63,8 +60,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0.4) 30%, rgba(20, 20, 20, 0) 100%),
-      linear-gradient(to right, rgba(20, 20, 20, 0.6) 0%, rgba(20, 20, 20, 0) 40%);
+    background: linear-gradient(to top, #141414 0%, rgba(20, 20, 20, 0.2) 40%, rgba(20, 20, 20, 0) 100%);
     z-index: 2;
   }
 
@@ -76,8 +72,8 @@
     background: rgba(0, 0, 0, 0.5);
     border: none;
     color: white;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -85,14 +81,50 @@
     cursor: pointer;
     transition: transform 0.2s;
 
-    &:hover {
-      transform: scale(1.1);
-      background: rgba(0, 0, 0, 0.8);
-    }
+    &:hover { transform: scale(1.1); background: rgba(0, 0, 0, 0.8); }
+    svg { width: 18px; height: 18px; }
+  }
 
-    svg {
-      width: 20px;
-      height: 20px;
+  .navArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s, transform 0.2s;
+    color: white;
+
+    &:hover { background: rgba(0, 0, 0, 0.7); transform: translateY(-50%) scale(1.1); }
+    &.prevArrow { left: 15px; }
+    &.nextArrow { right: 15px; }
+    svg { width: 24px; height: 24px; }
+  }
+
+  .rightActions {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 15;
+
+    .maturityRating {
+      background: rgba(0, 0, 0, 0.4);
+      border-left: 3px solid #ffffff;
+      padding: 5px 25px 5px 12px;
+      font-size: 1.1rem;
+      min-width: 90px;
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -104,11 +136,11 @@
   max-width: 800px;
 
   .heroName {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     line-height: 1;
   }
 }
@@ -116,103 +148,78 @@
 .progressContainer {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 25px;
+  max-width: 400px;
 
   .progressBar {
-    width: 300px;
-    height: 4px;
+    flex: 1;
+    height: 3px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 2px;
     overflow: hidden;
 
     .progressFill {
-      width: 100%; // As per design "22 of 22m"
+      width: 100%;
       height: 100%;
       background: #e50914;
     }
   }
 
   .progressText {
-    font-size: 0.9rem;
-    color: #e5e5e5;
+    font-size: 0.85rem;
+    color: #cccccc;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
+}
+
+.iconBtn {
+  background: rgba(42, 42, 42, 0.6);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  &:hover { border-color: #ffffff; background: rgba(42, 42, 42, 0.9); }
+  svg { width: 20px; height: 20px; }
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
 
   .resumeBtn {
     background: #ffffff;
     color: #000000;
     border: none;
-    padding: 10px 25px;
-    font-size: 1.2rem;
+    padding: 8px 20px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     cursor: pointer;
     transition: opacity 0.2s;
 
-    &:hover {
-      opacity: 0.8;
-    }
-
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  .iconBtn {
-    background: rgba(42, 42, 42, 0.6);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    color: white;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-
-    &:hover {
-      border-color: #ffffff;
-      background: rgba(42, 42, 42, 0.9);
-    }
-
-    svg {
-      width: 22px;
-      height: 22px;
-    }
-  }
-
-  .rightActions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    .maturityRating {
-      background: rgba(0, 0, 0, 0.4);
-      border-left: 3px solid #dcdcdc;
-      padding: 5px 30px 5px 10px;
-      font-size: 1.1rem;
-      min-width: 100px;
-    }
+    &:hover { opacity: 0.8; }
+    svg { width: 18px; height: 18px; }
   }
 }
 
 .contentLayout {
   display: flex;
-  padding: 40px 40px 100px;
-  gap: 40px;
+  padding: 30px 40px;
+  gap: 30px;
 }
 
 .mainContent {
@@ -221,20 +228,18 @@
   .metaRow {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-    color: #46d369; // Green for "4 Seasons" style
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #46d369;
     font-weight: 600;
+    font-size: 0.9rem;
 
-    .year {
-      color: #ffffff;
-    }
-
+    .year { color: #ffffff; }
     .badge {
       border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 0 5px;
-      font-size: 0.7rem;
-      border-radius: 3px;
+      padding: 0 4px;
+      font-size: 0.65rem;
+      border-radius: 2px;
       color: #ffffff;
     }
   }
@@ -242,44 +247,41 @@
   .ratingBox {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 25px;
+    gap: 8px;
+    margin-bottom: 20px;
 
     .ratingBadge {
       border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 2px 6px;
-      font-size: 0.8rem;
+      padding: 1px 5px;
+      font-size: 0.75rem;
     }
 
-    .ratingText {
-      font-size: 0.9rem;
-      color: #e5e5e5;
-    }
+    .ratingText { font-size: 0.85rem; color: #cccccc; }
   }
 
   .top10 {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 15px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 
     .top10Badge {
       background: #e50914;
-      padding: 2px 5px;
-      font-size: 0.6rem;
+      padding: 1px 4px;
+      font-size: 0.55rem;
       line-height: 1.2;
       border-radius: 2px;
     }
   }
 
   .description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.4;
-    margin-bottom: 60px;
-    max-width: 600px;
-    color: #e5e5e5;
+    margin-bottom: 20px;
+    max-width: 550px;
+    color: #cccccc;
   }
 }
 
@@ -287,36 +289,23 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 
   .sidebarItem {
-    font-size: 0.9rem;
-    line-height: 1.4;
+    font-size: 0.85rem;
+    line-height: 1.3;
 
-    .label {
-      color: #777777;
-      margin-right: 5px;
-    }
-
-    .value {
-      color: #ffffff;
-    }
+    .label { color: #777777; margin-right: 5px; }
+    .value { color: #ffffff; }
   }
 }
 
 .moreLikeThis {
-  margin-top: 80px;
+  margin-top: 10px;
+  padding: 0 40px 40px;
 
-  h2 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-
-  .cardsGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
+  h2 { font-size: 1.5rem; margin-bottom: 20px; }
+  .cardsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
 
   .card {
     position: relative;
@@ -326,60 +315,131 @@
     transition: transform 0.3s;
     background: #2f2f2f;
 
-    &:hover {
-      transform: scale(1.05);
-      z-index: 10;
-
-      .cardOverlay {
-        opacity: 1;
-      }
-    }
-
-    img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-    }
-
+    &:hover { transform: scale(1.05); z-index: 10; .cardOverlay { opacity: 1; } }
+    img { width: 100%; height: 130px; object-fit: cover; }
     .cardBadge {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 8px;
+      left: 8px;
       color: #e50914;
       font-weight: 900;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-
     .cardOverlay {
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 15px 10px;
+      padding: 12px 8px;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
       opacity: 0;
       transition: opacity 0.3s;
-
-      span {
-        font-size: 0.8rem;
-        font-weight: bold;
-      }
+      span { font-size: 0.75rem; font-weight: bold; }
     }
   }
 }
 
-@media (max-width: 1100px) {
-  .heroName {
-    font-size: 3.5rem !important;
+// Mobile Responsiveness
+@media (max-width: 768px) {
+  .modalOverlay { padding: 0; }
+  .pageWrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    top: 0 !important;
+    border-radius: 0;
+    margin-top: 0;
+    overflow-y: auto;
   }
 
+  .heroSection {
+    height: 45vh;
+    min-height: 320px;
+    padding: 0 15px 15px;
+
+    .mobileHeader {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 10;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+
+      .backArrowBtn { background: none; border: none; color: white; padding: 5px; cursor: pointer; }
+      .mobileLogo { color: #e50914; font-size: 1.4rem; font-weight: 900; letter-spacing: 2px; }
+      .mobileVerticalIcon {
+
+        width: 32px;
+        height: 32px;
+
+        img { width: 100%; height: 100%; object-fit: contain; }
+      }
+    }
+
+    .backButton { display: none; }
+    .heroName { font-size: 2rem !important; margin-bottom: 10px; }
+    .navArrow { width: 35px; height: 35px; svg { width: 20px; height: 20px; } }
+  }
+
+  .progressContainer { 
+    margin-bottom: 15px; 
+    max-width: 70%;
+    .progressBar { height: 2px; } 
+    .progressText { font-size: 0.75rem; }
+  }
+  .actions { 
+    gap: 8px;
+    .resumeBtn { 
+      height: 34px;
+      padding: 0 12px; 
+      font-size: 0.85rem; 
+      svg { width: 14px; height: 14px; }
+    } 
+    .iconBtn { 
+      width: 34px; 
+      height: 34px; 
+      svg { width: 16px; height: 16px; }
+    } 
+  }
+
+  .rightActions {
+    bottom: 15px;
+    gap: 10px;
+    .iconBtn {
+      width: 34px;
+      height: 34px;
+      svg { width: 16px; height: 16px; }
+    }
+    .maturityRating {
+      height: 34px;
+      min-width: 60px;
+      padding: 0 20px 0 10px;
+      font-size: 0.9rem;
+      border-left-width: 2px;
+    }
+  }
   .contentLayout {
     flex-direction: column;
+    padding: 15px;
+    gap: 20px;
   }
-
+  .description { font-size: 0.9rem; margin-bottom: 15px; }
   .sidebar {
-    order: -1;
-    margin-bottom: 40px;
+    width: 100% !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
   }
+  .moreLikeThis { padding: 0 15px 30px; .cardsGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .heroName { font-size: 3rem !important; }
+  .contentLayout { flex-direction: column; }
 }
