@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   background-color: #000;
   color: #fff;
   z-index: 1;
@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60vh;
+  height: 60svh;
   object-fit: cover;
   opacity: 0.4;
   mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.7) 40%, rgba(0,0,0,0) 100%);

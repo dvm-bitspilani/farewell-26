@@ -28,8 +28,8 @@ export const verticals: VerticalData[] = [
     genres: ['User Research', 'Prototyping', 'Visual Design'],
     color: '#a259ff',
     cast: ['Nabisha Obaid', 'Arnav Trehan', 'Sunpreet Brar'],
-    year: '2024',
-    seasons: '1 Season',
+    year: '2022',
+    seasons: '3 Season',
     icon: '/svg/figma-icon.svg',
     people: [
       {
@@ -65,8 +65,8 @@ export const verticals: VerticalData[] = [
     genres: ['Oasis Website', 'Apogee Website'],
     color: '#3fb984',
     cast: ['Luv Gupta', 'Shreyas Gantayet', 'Akshit Garg', 'Bharat Raj Singhal'],
-    year: '2024',
-    seasons: '1 Season',
+    year: '2022',
+    seasons: '3 Season',
     icon: '/svg/html-icon.svg',
     people: [
       {
@@ -110,8 +110,8 @@ export const verticals: VerticalData[] = [
     genres: ['Fest Portals', 'Web and App Backend'],
     color: '#ff00a0',
     cast: ['Rudradatt Dave'],
-    year: '2024',
-    seasons: '1 Season',
+    year: '2022',
+    seasons: '3 Season',
     icon: '/svg/python-icon.svg',
     people: [
       {
@@ -131,8 +131,8 @@ export const verticals: VerticalData[] = [
     genres: ['Curtain Raiser', 'Date Reveals', 'Theme Reveals'],
     color: '#001e36',
     cast: ['Tarun S', 'Rahul Gupta', 'Srinivasa Shankar', 'Dhruv Verma', 'Manish Goyal', 'Shiva Adithya M', 'Ronit Shroff'],
-    year: '2024',
-    seasons: '1 Season',
+    year: '2022',
+    seasons: '3 Season',
     icon: '/svg/ae-icon.svg',
     people: [
       {
@@ -208,8 +208,8 @@ export const verticals: VerticalData[] = [
     genres: ['Oasis App', 'Apogee App', 'Vendor App', 'Admin App', 'Game Dev'],
     color: '#61dafb',
     cast: ['Arnav Bharti', 'Pushkar Mishra', 'Tejansh Gautam', 'Chayan Jain'],
-    year: '2024',
-    seasons: '1 Season',
+    year: '2022',
+    seasons: '3 Season',
     icon: '/svg/react-icon.svg',
     people: [
       {

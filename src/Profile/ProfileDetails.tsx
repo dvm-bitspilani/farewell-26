@@ -114,10 +114,12 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
       <div className={styles.contentLayout}>
         <div className={styles.mainContent}>
           <div className={styles.metaRow}>
-            <span className={styles.seasons}>{vertical.seasons}</span>
-            <span className={styles.year}>{vertical.year}</span>
+            <span className={styles.seasons}>{selectedPerson.name == "RONIT SHROFF" ? `2 Seasons` : '4 Seasons'}</span>
+            {/* <span className={styles.seasons}>{vertical.seasons}</span> */}
+            {/* <span className={styles.year}>2022</span> */}
+            <span className={styles.year}>{selectedPerson.name == "RONIT SHROFF" ? `2024` : '2022'}</span>
             <span className={styles.badge}>HD</span>
-            <span className={styles.badge}>AD)))</span>
+            <span className={styles.badge}>AD</span>
           </div>
           
           <div className={styles.ratingBox}>

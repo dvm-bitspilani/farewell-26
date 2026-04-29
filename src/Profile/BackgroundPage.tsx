@@ -30,7 +30,7 @@ const BackgroundPage: React.FC<BackgroundPageProps> = () => {
           <div className={styles.leftSide}>
             <section className={styles.section}>
               <h3>Your Next Watch</h3>
-              <div className={styles.thumb}><img src="/img/BgTb1.jpg" alt="Oasis 22" /></div>
+              <div className={styles.thumb}><img src="/img/BgTb1.png" alt="Oasis 22" /></div>
             </section>
             <section className={styles.section}>
               <h3>You May Also Like</h3>
