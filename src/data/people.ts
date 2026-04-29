@@ -37,7 +37,7 @@ export const verticals: VerticalData[] = [
         img: '/people/nabisha obaid.jpg',
         position: 'UI/UX Designer',
         type: 'other',
-        description: 'Creating seamless experiences and beautiful interfaces for the next generation of DVM projects.',
+        description: "Don't cry because it's over, smile because it happened.",
         traits: ['Creative', 'Precise', 'Visionary']
       },
       {
@@ -45,7 +45,7 @@ export const verticals: VerticalData[] = [
         img: '/people/arnav trehan.jpg',
         position: 'Interaction Designer',
         type: 'other',
-        description: 'Focusing on the micro-interactions that make our applications feel alive and responsive.',
+        description: "How lucky I am to have something that makes saying goodbye so hard.",
         traits: ['Diligent', 'Technical', 'Innovative']
       },
       {
@@ -53,7 +53,7 @@ export const verticals: VerticalData[] = [
         img: '/people/sunpreet brar.jpg',
         position: 'Visual Designer',
         type: 'other',
-        description: 'Ensuring visual consistency and high-quality aesthetic standards across all platforms.',
+        description: "The magic of new beginnings is truly the most powerful of them all.",
         traits: ['Aesthetic', 'Focused', 'Dedicated']
       },
     ],
@@ -74,7 +74,7 @@ export const verticals: VerticalData[] = [
         img: '/people/luv gupta.jpg',
         position: 'Frontend Developer',
         type: 'other',
-        description: 'Architecting fast and responsive web applications with a focus on clean code and performance.',
+        description: "Goodbyes are not forever, they simply mean I'll miss you until we meet again.",
         traits: ['Efficient', 'Logical', 'Reliable']
       },
       {
@@ -82,7 +82,7 @@ export const verticals: VerticalData[] = [
         img: '/people/shreyas gantayet.jpg',
         position: 'Frontend Engineer',
         type: 'other',
-        description: 'Bringing complex designs to life with robust React components and smooth transitions.',
+        description: "Every new beginning comes from some other beginning's end.",
         traits: ['Skilled', 'Passionate', 'Agile']
       },
       {
@@ -90,7 +90,7 @@ export const verticals: VerticalData[] = [
         img: '/people/akshit garg.jpg',
         position: 'UI Developer',
         type: 'other',
-        description: 'Bridging the gap between design and code to ensure pixel-perfect implementations.',
+        description: "This is not a goodbye, my friend, this is a thank you.",
         traits: ['Detail-oriented', 'Fast', 'Collaborative']
       },
       {
@@ -98,7 +98,7 @@ export const verticals: VerticalData[] = [
         img: '/people/bharat raj singhal.jpeg',
         position: 'Web Specialist',
         type: 'other',
-        description: 'Optimizing web experiences for speed and accessibility across all modern browsers.',
+        description: "Go confidently in the direction of your dreams! Live the life you’ve imagined.",
         traits: ['Resourceful', 'Focused', 'Steady']
       },
     ],
@@ -119,7 +119,7 @@ export const verticals: VerticalData[] = [
         img: '/people/rudratt dave.png',
         position: 'Backend Architect',
         type: 'other',
-        description: 'Building the robust foundation and scalable APIs that power our entire ecosystem.',
+        description: "Great is the art of beginning, but greater is the art of ending.",
         traits: ['Architect', 'Calm', 'Analytical']
       },
     ],
@@ -140,7 +140,7 @@ export const verticals: VerticalData[] = [
         img: '/people/tarun s.jpg',
         position: 'Video Lead',
         type: 'other',
-        description: 'Directing the visual narrative and ensuring high-quality cinematic output for every project.',
+        description: "Success is not final, failure is not fatal: it is the courage to continue that counts.",
         traits: ['Director', 'Creative', 'Leader']
       },
       {
@@ -148,7 +148,7 @@ export const verticals: VerticalData[] = [
         img: '/people/rahul gupta.jpg',
         position: 'Video Editor',
         type: 'other',
-        description: 'Mastering the edit to create compelling stories that captivate our audience.',
+        description: "The pain of parting is nothing to the joy of meeting again.",
         traits: ['Storyteller', 'Patient', 'Sharp']
       },
       {
@@ -156,7 +156,7 @@ export const verticals: VerticalData[] = [
         img: '/people/srinivasa shankar.jpg',
         position: 'Motion Designer',
         type: 'other',
-        description: 'Adding life to static designs with fluid motion and engaging visual effects.',
+        description: "May the road rise up to meet you. May the wind be always at your back.",
         traits: ['Dynamic', 'Artistic', 'Technical']
       },
       {
@@ -164,7 +164,7 @@ export const verticals: VerticalData[] = [
         img: '/people/dhruv verma.jpg',
         position: 'VFX Artist',
         type: 'other',
-        description: 'Pushing the boundaries of visual effects to create stunning and immersive experiences.',
+        description: "Yesterday is but today's memory, and tomorrow is today's dream.",
         traits: ['Experimental', 'Focused', 'Talented']
       },
       {
@@ -172,7 +172,7 @@ export const verticals: VerticalData[] = [
         img: '/people/manish goyal.png',
         position: 'Post-Production Specialist',
         type: 'other',
-        description: 'Ensuring every frame is perfect through meticulous color grading and sound design.',
+        description: "A farewell is necessary before we can meet again.",
         traits: ['Precise', 'Steady', 'Reliable']
       },
       {
@@ -180,7 +180,7 @@ export const verticals: VerticalData[] = [
         img: '/people/shiva adithya m.jpg',
         position: 'Cinematographer',
         type: 'other',
-        description: 'Capturing the perfect shots with a keen eye for lighting and composition.',
+        description: "Farewell! God knows when we shall meet again.",
         traits: ['Observant', 'Creative', 'Patient']
       },
       {
@@ -217,23 +217,23 @@ export const verticals: VerticalData[] = [
         img: '/people/arnav bharti.jpg',
         position: 'App Developer',
         type: 'other',
-        description: 'Developing high-performance mobile applications that provide a seamless user experience.',
+        description: "Keep your face always toward the sunshine - and shadows will fall behind you.",
         traits: ['Focused', 'Logical', 'Efficient']
       },
-      // {
-      //   name: 'MALAY DWIVEDI',
-      //   img: '/people/malay dwivedi.jpg',
-      //   position: 'iOS Developer',
-      //   type: 'other',
-      //   description: 'Crafting premium iOS experiences with a focus on native performance and design.',
-      //   traits: ['Precise', 'Dedicated', 'Artistic']
-      // },
+      {
+        name: 'MALAY DWIVEDI',
+        img: '/people/malay dwivedi.jpg',
+        position: 'iOS Developer',
+        type: 'other',
+        description: "Life is a journey, not a destination.",
+        traits: ['Precise', 'Dedicated', 'Artistic']
+      },
       {
         name: 'PUSHKAR MISHRA',
         img: '/people/pushkar mishra.jpg',
         position: 'Android Developer',
         type: 'other',
-        description: 'Building robust Android applications that scale across millions of devices.',
+        description: "The best is yet to come.",
         traits: ['Hustler', 'Technical', 'Resourceful']
       },
       {
@@ -241,7 +241,7 @@ export const verticals: VerticalData[] = [
         img: '/people/tejansh gautam.jpeg',
         position: 'Mobile Engineer',
         type: 'other',
-        description: 'Exploring cross-platform solutions to deliver high-quality apps at speed.',
+        description: "Spread your wings and fly.",
         traits: ['Versatile', 'Fast', 'Inquisitive']
       },
       {
@@ -249,7 +249,7 @@ export const verticals: VerticalData[] = [
         img: '/people/chayan jain.jpg',
         position: 'UI/App Specialist',
         type: 'other',
-        description: 'Ensuring that our mobile apps are as beautiful as they are functional.',
+        description: "End? No, the journey doesn't end here.",
         traits: ['Aesthetic', 'Diligent', 'Collaborative']
       },
     ],
