@@ -1,0 +1,161 @@
+.bgWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.fullTopBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  opacity: 0.4;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.header {
+  height: 70px;
+  padding: 0 4%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  z-index: 10;
+
+  .logo {
+    color: #e50914;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+
+  .categoryDropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0,0,0,0.7);
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    
+    span {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.mainContent {
+  padding: 180px 4% 0; // Increased from 100px to lower content
+  position: relative;
+  z-index: 5;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.heroActions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 60px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+  }
+
+  .playBtn {
+    background: #fff;
+    color: #000;
+  }
+
+  .infoBtn {
+    background: rgba(109, 109, 110, 0.7);
+    color: #fff;
+  }
+}
+
+.sideSections {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+
+  h3 {
+    font-size: 1.2rem;
+    color: #777;
+    margin-bottom: 15px;
+  }
+
+  .thumb {
+    width: 280px;
+    height: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    background: #111;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.8;
+    }
+  }
+}
+
+.sideImages {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+
+  img {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    filter: blur(5px);
+  }
+
+  .leftBg {
+    left: 0;
+    mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  }
+
+  .rightBg {
+    right: 0;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  }
+}

@@ -17,7 +17,11 @@ const profiles: Profile[] = [
   { id: 5, label: 'App Dev', icon: '/svg/react-icon.svg', color: '#61dafb' },
 ];
 
-const ProfileSelection: React.FC = () => {
+interface ProfileSelectionProps {
+  onSelect: (id: number) => void;
+}
+
+const ProfileSelection: React.FC<ProfileSelectionProps> = ({ onSelect }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -65,7 +69,7 @@ const ProfileSelection: React.FC = () => {
         
         <div className={styles['profile-grid']}>
           {profiles.map((p) => (
-            <div key={p.id} className={styles['profile-card']}>
+            <div key={p.id} className={styles['profile-card']} onClick={() => onSelect(p.id)}>
               <div className={styles['icon-box']} >
                 <img src={p.icon} alt={p.label} className={styles.ProfileImg} />
               </div>
