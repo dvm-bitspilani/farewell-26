@@ -124,7 +124,7 @@ const ProfileDetails: React.FC<ProfileDetailsProps> = ({ vertical, onBack }) => 
           
           <div className={styles.ratingBox}>
             <span className={styles.ratingBadge}>TV-MA</span>
-            <span className={styles.ratingText}>vaping, violence, alcohol</span>
+            <span className={styles.ratingText}> All Nighters, Vaping, DVM best hai BC</span>
           </div>
 
           <div className={styles.top10}>
