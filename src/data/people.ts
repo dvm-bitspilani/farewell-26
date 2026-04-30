@@ -64,7 +64,7 @@ export const verticals: VerticalData[] = [
     genre: 'Web Development',
     genres: ['Oasis Website', 'Apogee Website'],
     color: '#3fb984',
-    cast: ['Luv Gupta', 'Shreyas Gantayet', 'Akshit Garg', 'Bharat Raj Singhal'],
+    cast: ['Luv Gupta', 'Shreyas Gantayet', 'Akshit Garg', 'Bharat Raj Singhal', 'Ritik Chandra'],
     year: '2022',
     seasons: '3 Season',
     icon: '/svg/html-icon.svg',
@@ -100,6 +100,14 @@ export const verticals: VerticalData[] = [
         type: 'other',
         description: "Go confidently in the direction of your dreams! Live the life you’ve imagined.",
         traits: ['Resourceful', 'Focused', 'Steady']
+      },
+      {
+        name: 'RITIK CHANDRA',
+        img: '/people/Ritik Chandra.jpg',
+        position: 'Frontend Developer',
+        type: 'other',
+        description: "The future belongs to those who believe in the beauty of their dreams.",
+        traits: ['Logical', 'Creative', 'Diligent']
       },
     ],
   },
@@ -205,9 +213,9 @@ export const verticals: VerticalData[] = [
     id: 5,
     label: 'App Dev',
     genre: 'Mobile Applications',
-    genres: ['Oasis App', 'Apogee App', 'Vendor App', 'Admin App', 'Game Dev'],
+    genres: ['Oasis App', 'Apogee App', 'Vendor App', 'Admin App'],
     color: '#61dafb',
-    cast: ['Arnav Bharti', 'Pushkar Mishra', 'Tejansh Gautam', 'Chayan Jain'],
+    cast: ['Arnav Bharti', 'Chayan Jain'],
     year: '2022',
     seasons: '3 Season',
     icon: '/svg/react-icon.svg',
@@ -229,6 +237,27 @@ export const verticals: VerticalData[] = [
       //   traits: ['Precise', 'Dedicated', 'Artistic']
       // },
       {
+        name: 'CHAYAN JAIN',
+        img: '/people/chayan jain.jpg',
+        position: 'UI/App Specialist',
+        type: 'other',
+        description: "End? No, the journey doesn't end here.",
+        traits: ['Aesthetic', 'Diligent', 'Collaborative']
+      },
+    ],
+  },
+  {
+    id: 6,
+    label: 'Game Dev',
+    genre: 'Interactive Experiences',
+    genres: ['Game Design', 'Unity/Unreal', 'Game Logic'],
+    color: '#ff4b2b',
+    cast: ['Pushkar Mishra', 'Tejansh Gautam'],
+    year: '2022',
+    seasons: '3 Season',
+    icon: '/svg/game.png',
+    people: [
+      {
         name: 'PUSHKAR MISHRA',
         img: '/people/pushkar mishra.jpg',
         position: 'Android Developer',
@@ -243,14 +272,6 @@ export const verticals: VerticalData[] = [
         type: 'other',
         description: "Spread your wings and fly.",
         traits: ['Versatile', 'Fast', 'Inquisitive']
-      },
-      {
-        name: 'CHAYAN JAIN',
-        img: '/people/chayan jain.jpg',
-        position: 'UI/App Specialist',
-        type: 'other',
-        description: "End? No, the journey doesn't end here.",
-        traits: ['Aesthetic', 'Diligent', 'Collaborative']
       },
     ],
   },

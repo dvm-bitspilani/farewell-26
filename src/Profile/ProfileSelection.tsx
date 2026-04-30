@@ -15,6 +15,7 @@ const profiles: Profile[] = [
   { id: 3, label: 'Backend', icon: '/svg/python-icon.svg', color: '#ff00a0' },
   { id: 4, label: 'Video', icon: '/svg/ae-icon.svg', color: '#001e36' },
   { id: 5, label: 'App Dev', icon: '/svg/react-icon.svg', color: '#61dafb' },
+  { id: 6, label: 'Game Dev', icon: '/svg/game.png', color: '#ff4b2b' },
 ];
 
 interface ProfileSelectionProps {
@@ -70,19 +71,12 @@ const ProfileSelection: React.FC<ProfileSelectionProps> = ({ onSelect }) => {
         <div className={styles['profile-grid']}>
           {profiles.map((p) => (
             <div key={p.id} className={styles['profile-card']} onClick={() => onSelect(p.id)}>
-              <div className={styles['icon-box']} >
+              <div className={`${styles['icon-box']} ${p.icon.endsWith('.png') ? styles['png-icon'] : ''}`} >
                 <img src={p.icon} alt={p.label} className={styles.ProfileImg} />
               </div>
               <span className={styles['profile-label']}>{p.label}</span>
             </div>
           ))}
-
-          <div className={`${styles['profile-card']} ${styles['add-profile']}`}>
-            <div className={styles['icon-box']}>
-              <div className={styles['plus-icon']}>+</div>
-            </div>
-            <span className={styles['profile-label']}>Add Profile</span>
-          </div>
         </div>
 
         <button className={styles['manage-button']}>MANAGE PROFILES</button>

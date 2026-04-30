@@ -15,7 +15,7 @@ $transition-speed: 0.3s;
   .background-overlay {
     position: absolute;
     inset: 0;
-    background-image: url('/img/Hero.png'); 
+    background-image: url('/img/Hero.png');
     background-size: cover;
     opacity: 0.15;
     // filter: grayscale(100%);
@@ -51,12 +51,13 @@ $transition-speed: 0.3s;
   align-items: center;
   cursor: pointer;
   // This controls the overall responsive size of each profile slot
-  width: clamp(100px, 15vw, 160px); 
-// This ensures the animation looks clean
+  width: clamp(100px, 15vw, 160px);
+  // This ensures the animation looks clean
   will-change: transform, opacity;
+
   .icon-box {
-    width: 100%;       // Takes width from profile-card
-    aspect-ratio: 1;    // Keeps it perfectly square
+    width: 100%; // Takes width from profile-card
+    aspect-ratio: 1; // Keeps it perfectly square
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -72,6 +73,15 @@ $transition-speed: 0.3s;
       object-fit: cover; // Fills the square like Netflix profiles
       transition: transform $transition-speed ease;
     }
+
+    &.png-icon {
+      border-radius: 12px;
+      overflow: hidden;
+
+      .ProfileImg {
+        transform: scale(1.15);
+      }
+    }
   }
 
   .profile-label {
@@ -85,41 +95,14 @@ $transition-speed: 0.3s;
     .icon-box {
       border-color: white; // Added white border back for classic look
       transform: scale(1.05);
-      
+
       .ProfileImg {
         transform: scale(1.05); // Slight zoom on image inside
       }
     }
+
     .profile-label {
       color: white;
-    }
-  }
-
-  &.add-profile {
-    .icon-box {
-      background-color: transparent;
-      border: none; // Add profile usually doesn't have the border until hover
-
-      .plus-icon {
-        color: $text-grey;
-        font-size: 4rem;
-        font-weight: 200;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    &:hover {
-      .icon-box {
-        background-color: #e5e5e5;
-        border-color: #e5e5e5;
-        transform: scale(1.05);
-        
-        .plus-icon {
-          color: black;
-        }
-      }
     }
   }
 }
