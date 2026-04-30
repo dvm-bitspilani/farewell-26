@@ -138,7 +138,7 @@ export const verticals: VerticalData[] = [
     genre: 'Motion Graphics',
     genres: ['Curtain Raiser', 'Date Reveals', 'Theme Reveals'],
     color: '#001e36',
-    cast: ['Tarun S', 'Rahul Gupta', 'Srinivasa Shankar', 'Dhruv Verma', 'Manish Goyal', 'Shiva Adithya M', 'Ronit Shroff'],
+    cast: ['Tarun S', 'Rahul Gupta', 'Srinivasa Shankar', 'Dhruv Verma','Satyam', 'Manish Goyal', 'Shiva Adithya M', 'Ronit Shroff'],
     year: '2022',
     seasons: '3 Season',
     icon: '/svg/ae-icon.svg',
@@ -182,6 +182,14 @@ export const verticals: VerticalData[] = [
         type: 'other',
         description: "A farewell is necessary before we can meet again.",
         traits: ['Precise', 'Steady', 'Reliable']
+      },
+      {
+        name: 'SATYAM',
+        img: '/people/satyam.jpg',
+        position: 'Color Grading Specialist',
+        type: 'other',
+        description: "Don't cry because it's over, smile because it happened.",
+        traits: ['Observant', 'Creative', 'Patient']
       },
       {
         name: 'SHIVA ADITHYA M',
